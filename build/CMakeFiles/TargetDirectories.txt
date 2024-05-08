@@ -1,3 +1,0 @@
-/home/calin/projects/chip8-emulator/build/CMakeFiles/chip8.dir
-/home/calin/projects/chip8-emulator/build/CMakeFiles/edit_cache.dir
-/home/calin/projects/chip8-emulator/build/CMakeFiles/rebuild_cache.dir
