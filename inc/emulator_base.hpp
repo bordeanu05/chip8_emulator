@@ -26,22 +26,19 @@ typedef struct {
 } EmulatorConfigT;
 
 class EmulatorBase {
-private:
-    SDLT m_sdl;
-    EmulatorConfigT m_emulator_config;
-
 public:
     EmulatorBase();
     EmulatorBase(const EmulatorConfigT &emu_config);
     ~EmulatorBase();
 
 protected:
+    SDLT m_sdl;
+    EmulatorConfigT m_emu_config;
 
-    void initConfig(const EmulatorConfigT &emulator_config);
+    void initConfig(const EmulatorConfigT &emu_config);
     bool initSDL();
 
     void clearScreen();
-    void updateScreen();
 };
 
 #endif // _EMULATOR_BASE_HPP_

@@ -21,8 +21,8 @@ EmulatorBase::~EmulatorBase() {
     SDL_Quit();
 }
 
-void EmulatorBase::initConfig(const EmulatorConfigT &emulator_config) {
-    m_emulator_config = (EmulatorConfigT)emulator_config;
+void EmulatorBase::initConfig(const EmulatorConfigT &emu_config) {
+    m_emu_config = (EmulatorConfigT)emu_config;
 }
 
 bool EmulatorBase::initSDL() {
@@ -36,8 +36,8 @@ bool EmulatorBase::initSDL() {
     m_sdl.window = SDL_CreateWindow("CHIP8 Emulator",
                                     SDL_WINDOWPOS_CENTERED,
                                     SDL_WINDOWPOS_CENTERED,
-                                    m_emulator_config.window_width * m_emulator_config.scale_factor,
-                                    m_emulator_config.window_height * m_emulator_config.scale_factor,
+                                    m_emu_config.window_width * m_emu_config.scale_factor,
+                                    m_emu_config.window_height * m_emu_config.scale_factor,
                                     0);
 
     if(!m_sdl.window) {
@@ -58,16 +58,12 @@ bool EmulatorBase::initSDL() {
 
 void EmulatorBase::clearScreen() {
     const uint8_t rgba[4] = {
-        uint8_t((m_emulator_config.bg_color << 24) & 0x00FFFFFF),
-        uint8_t((m_emulator_config.bg_color << 16) & 0xFF00FFFF),
-        uint8_t((m_emulator_config.bg_color <<  8) & 0xFFFF00FF),
-        uint8_t((m_emulator_config.bg_color <<  0) & 0xFFFFFF00)
+        uint8_t((m_emu_config.bg_color << 24) & 0x00FFFFFF),
+        uint8_t((m_emu_config.bg_color << 16) & 0xFF00FFFF),
+        uint8_t((m_emu_config.bg_color <<  8) & 0xFFFF00FF),
+        uint8_t((m_emu_config.bg_color <<  0) & 0xFFFFFF00)
     };
 
     SDL_SetRenderDrawColor(m_sdl.renderer, rgba[0], rgba[1], rgba[2], rgba[3]);
     SDL_RenderClear(m_sdl.renderer);
-}
-
-void EmulatorBase::updateScreen() {
-    SDL_RenderPresent(m_sdl.renderer);
 }
