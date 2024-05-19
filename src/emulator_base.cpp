@@ -2,7 +2,7 @@
 
 EmulatorBase::EmulatorBase() {}
 
-EmulatorBase::EmulatorBase(const EmulatorConfigT &emu_config) {
+EmulatorBase::EmulatorBase(const EmulatorConfig &emu_config) {
     std::cout << "Initializing emulator base..." << '\n';
 
     initConfig(emu_config);
@@ -21,8 +21,8 @@ EmulatorBase::~EmulatorBase() {
     SDL_Quit();
 }
 
-void EmulatorBase::initConfig(const EmulatorConfigT &emu_config) {
-    m_emu_config = (EmulatorConfigT)emu_config;
+void EmulatorBase::initConfig(const EmulatorConfig &emu_config) {
+    m_emu_config = (EmulatorConfig)emu_config;
 }
 
 bool EmulatorBase::initSDL() {

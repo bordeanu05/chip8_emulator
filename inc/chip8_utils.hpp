@@ -1,12 +1,12 @@
-#ifndef _CHIP8_UTILS_HPP_
-#define _CHIP8_UTILS_HPP_
+#ifndef CHIP8_UTILS_HPP
+#define CHIP8_UTILS_HPP
 
 #include <cstdint>
 
-const uint32_t MEMORY_SIZE = 4096;
-const uint32_t START_ADDRESS = 0x200;
-const uint32_t FONTSET_SIZE = 80;
-const uint32_t FONTSET_START_ADDRESS = 0x50;
+constexpr uint32_t MEMORY_SIZE = 4096;
+constexpr uint32_t START_ADDRESS = 0x200;
+constexpr uint32_t FONTSET_SIZE = 80;
+constexpr uint32_t FONTSET_START_ADDRESS = 0x50;
 
 const uint8_t fontset[FONTSET_SIZE] = {
     0xF0, 0x90, 0x90, 0x90, 0xF0, // 0
@@ -27,4 +27,4 @@ const uint8_t fontset[FONTSET_SIZE] = {
     0xF0, 0x80, 0xF0, 0x80, 0x80  // F
 };
 
-#endif // _CHIP8_UTILS_HPP_
+#endif // CHIP8_UTILS_HPP
